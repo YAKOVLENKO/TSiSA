@@ -44,7 +44,7 @@ std::vector<int> FillCin(std::vector<int> tmp)
 		for (int i = 0; i < 3; ++i)
 		{
 			std::cin >> smth;
-			tmp.push_back(smth);
+			tmp.push_back(-smth);
 		}
 		return tmp;
 }
@@ -157,7 +157,7 @@ int main()
 	}
 	
 	{	
-		if (Find("column", 1, 0, 3, symplex, 0) != -1)
+		if (Find("column", 0, 0, 3, symplex, 0) != -1)
 			k = Find("line", Find("column", 1, 0, 3, symplex, 0), 1, 4, symplex, 0);
 		else {
 			std::cout << "No results!" << std::endl;
