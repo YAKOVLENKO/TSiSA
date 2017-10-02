@@ -181,7 +181,9 @@ int main()
 	while (Find("line", 3, 0, 4, symplex, 1) != -1)
 	{
 		k = Find("line", 3, 0, 4, symplex, 1);
+		if (k < 0) return 0;
 		r = FindMin(symplex, k);
+		if (r < 0) return 0;
 		symplex = newSymplex(symplex, k, r);
 	}
 	
