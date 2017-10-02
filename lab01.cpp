@@ -161,6 +161,7 @@ int main()
 			k = Find("line", Find("column", 1, 0, 3, symplex, 0), 1, 4, symplex, 0);
 		else {
 			std::cout << "No results!" << std::endl;
+			system("pause");
 			return 0;
 		}
 		if (k != -1)
@@ -168,12 +169,14 @@ int main()
 			r = FindMin(symplex, k);
 			if (r == -1) {
 				std::cout << "No results!" << std::endl;
+				system("pause");
 				return 0;
 			}
 			symplex = newSymplex(symplex, k, r);
 		}
 		else {
 			std::cout << "No results!" << std::endl;
+			system("pause");
 			return 0;
 		}
 	}
@@ -181,9 +184,18 @@ int main()
 	while (Find("line", 3, 0, 4, symplex, 1) != -1)
 	{
 		k = Find("line", 3, 0, 4, symplex, 1);
-		if (k < 0) return 0;
+		if (k < 0)
+		{
+			std::cout << "No results!" << std::endl;
+			system("pause");
+			return 0;
+		}
 		r = FindMin(symplex, k);
-		if (r < 0) return 0;
+		if (r < 0) {
+			std::cout << "No results!" << std::endl;
+			return 0;
+			system("pause");
+		}
 		symplex = newSymplex(symplex, k, r);
 	}
 	
